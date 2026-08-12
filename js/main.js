@@ -1,7 +1,7 @@
 /* ==========================================================================
    MAIN JAVASCRIPT — Patrick Melaga Portfolio
-   Dual Theme Toggle, Mobile Menu Drawer, 10 Cameroonian & Global Projects Modal,
-   Real Working Contact Form (Direct Email & Mailto Trigger)
+   Dual Theme Toggle, Mobile Navigation Drawer, 10 Cameroonian Projects Modal,
+   Real Working Contact Form & Touch Optimization
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -12,7 +12,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const themeToggleBtn = document.getElementById('theme-toggle');
   const themeIcon = themeToggleBtn ? themeToggleBtn.querySelector('i') : null;
 
-  // Check saved theme or default to dark
   const savedTheme = localStorage.getItem('pm_theme') || 'dark';
   if (savedTheme === 'light') {
     document.body.classList.add('light-theme');
@@ -47,15 +46,23 @@ document.addEventListener('DOMContentLoaded', () => {
   const mobileNavDrawer = document.getElementById('mobile-nav-drawer');
 
   if (mobileMenuBtn && mobileNavDrawer) {
-    mobileMenuBtn.addEventListener('click', () => {
+    mobileMenuBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
       mobileNavDrawer.classList.toggle('active');
     });
 
-    // Close mobile drawer when clicking any link inside
+    // Close when clicking links
     mobileNavDrawer.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         mobileNavDrawer.classList.remove('active');
       });
+    });
+
+    // Close when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!mobileNavDrawer.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+        mobileNavDrawer.classList.remove('active');
+      }
     });
   }
 
@@ -66,7 +73,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const lenis = new Lenis({
       duration: 1.2,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      smooth: true
+      smooth: true,
+      smoothTouch: false // Native touch scroll on mobile devices
     });
 
     function raf(time) {
@@ -82,7 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const cursorDot = document.querySelector('.custom-cursor-dot');
   const cursorRing = document.querySelector('.custom-cursor-ring');
 
-  if (cursorDot && cursorRing) {
+  if (cursorDot && cursorRing && window.innerWidth > 992) {
     let mouseX = 0, mouseY = 0;
     let ringX = 0, ringY = 0;
 
@@ -110,31 +118,33 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* ------------------------------------------------------------------------
-     5. 3D CARD TILT & MOUSE GLOW
+     5. 3D CARD TILT & MOUSE GLOW (Desktop Only)
      ------------------------------------------------------------------------ */
-  const tiltCards = document.querySelectorAll('.glass-card, .project-card-10, .photo-frame');
+  if (window.innerWidth > 992) {
+    const tiltCards = document.querySelectorAll('.glass-card, .project-card-10, .photo-frame');
 
-  tiltCards.forEach(card => {
-    card.addEventListener('mousemove', (e) => {
-      const rect = card.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
+    tiltCards.forEach(card => {
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
 
-      card.style.setProperty('--mouse-x', `${x}px`);
-      card.style.setProperty('--mouse-y', `${y}px`);
+        card.style.setProperty('--mouse-x', `${x}px`);
+        card.style.setProperty('--mouse-y', `${y}px`);
 
-      const centerX = rect.width / 2;
-      const centerY = rect.height / 2;
-      const rotateX = ((y - centerY) / centerY) * -6;
-      const rotateY = ((x - centerX) / centerX) * 6;
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        const rotateX = ((y - centerY) / centerY) * -5;
+        const rotateY = ((x - centerX) / centerX) * 5;
 
-      card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
+        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
+      });
+
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0px)';
+      });
     });
-
-    card.addEventListener('mouseleave', () => {
-      card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0px)';
-    });
-  });
+  }
 
   /* ------------------------------------------------------------------------
      6. GSAP REVEAL ANIMATIONS
@@ -172,7 +182,7 @@ document.addEventListener('DOMContentLoaded', () => {
       title: 'Feelinx — Application Mobile Rencontre & Social',
       location: 'Yaoundé, Douala & Afrique',
       category: 'App Mobile • Flutter / Firebase',
-      desc: 'Application mobile de rencontre et réseau social africain pensée avec une expérience utilisateur immersive et culturelle. Algorithme de correspondance basé sur le profil psychologique, SMS Firebase, paiement Mobile Money et direction artistique sur-mesure.',
+      desc: 'Application mobile de rencontre et réseau social africain. Algorithme de correspondance basé sur le profil psychologique, SMS Firebase, paiement Mobile Money et direction artistique Photoshop sur-mesure.',
       tech: ['Flutter', 'Dart', 'Firebase Auth', 'Cloud Firestore', 'Photoshop UI', 'MoMo API'],
       link: '#'
     },
@@ -338,20 +348,19 @@ document.addEventListener('DOMContentLoaded', () => {
       const originalText = submitBtn.innerHTML;
 
       submitBtn.disabled = true;
-      submitBtn.innerHTML = '<i class="fa-solid fa-paper-plane fa-spin"></i> Ouverture du Client Mail...';
+      submitBtn.innerHTML = '<i class="fa-solid fa-paper-plane fa-spin"></i> Envoi direct à Patrick...';
 
-      // 1. Construct direct mailto trigger so the message sends directly to patrickmelaga@outlook.com
+      // Direct mailto link generation
       const mailtoUrl = `mailto:patrickmelaga@outlook.com?subject=${encodeURIComponent('Nouveau Projet Web - ' + name)}&body=${encodeURIComponent('Nom: ' + name + '\nEmail: ' + email + '\n\nMessage:\n' + message)}`;
 
       setTimeout(() => {
-        // Open default mail client
         window.location.href = mailtoUrl;
 
-        submitBtn.innerHTML = '<i class="fa-solid fa-check"></i> E-mail Prêt dans votre Client Mail !';
+        submitBtn.innerHTML = '<i class="fa-solid fa-check"></i> Client Mail Ouvert !';
         submitBtn.style.background = 'var(--gradient-emerald)';
 
         if (formStatus) {
-          formStatus.innerHTML = `✨ Merci <strong>${name}</strong> ! Votre client de messagerie s'est ouvert pour envoyer directement le message à <strong>patrickmelaga@outlook.com</strong>.`;
+          formStatus.innerHTML = `✨ Merci <strong>${name}</strong> ! Votre application e-mail s'est ouverte pour envoyer votre message directement à <strong>patrickmelaga@outlook.com</strong>.`;
           formStatus.style.color = 'var(--accent-emerald)';
         }
 
@@ -360,7 +369,7 @@ document.addEventListener('DOMContentLoaded', () => {
           submitBtn.innerHTML = originalText;
           submitBtn.style.background = 'var(--gradient-accent)';
         }, 6000);
-      }, 800);
+      }, 600);
     });
   }
 
