@@ -55,7 +55,7 @@ body.light-theme {
   --bg-dark-secondary: #EBF0F7;
   --bg-card: rgba(255, 255, 255, 0.88);
   --bg-card-hover: rgba(255, 255, 255, 0.98);
-  --bg-glass-nav: rgba(255, 255, 255, 0.9);
+  --bg-glass-nav: rgba(255, 255, 255, 0.92);
   
   --text-primary: #0F172A;
   --text-secondary: #475569;
@@ -195,13 +195,14 @@ body.light-theme .section-label {
 }
 
 .section-title {
-  font-size: clamp(1.8rem, 4vw, 3.5rem);
+  font-size: clamp(1.6rem, 5vw, 3.5rem);
   margin-bottom: 16px;
   word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .section-subtitle {
-  font-size: clamp(0.92rem, 1.8vw, 1.18rem);
+  font-size: clamp(0.9rem, 1.8vw, 1.18rem);
   color: var(--text-secondary);
   max-width: 720px;
   margin-bottom: 40px;
@@ -216,7 +217,7 @@ body.light-theme .section-label {
 }
 
 section {
-  padding: 90px 0;
+  padding: 85px 0;
   position: relative;
   overflow: hidden;
 }
@@ -298,6 +299,7 @@ section {
   background: var(--gradient-accent);
   border-radius: 50%;
   box-shadow: 0 0 10px var(--accent-cyan);
+  flex-shrink: 0;
 }
 
 .nav-links {
@@ -338,6 +340,7 @@ section {
   display: flex;
   align-items: center;
   gap: 10px;
+  flex-shrink: 0;
 }
 
 /* Theme Switcher Button */
@@ -354,6 +357,7 @@ section {
   justify-content: center;
   font-size: 1rem;
   transition: var(--transition-smooth);
+  flex-shrink: 0;
 }
 
 .theme-toggle-btn:hover {
@@ -393,6 +397,7 @@ section {
   border-radius: 50%;
   font-size: 1.1rem;
   cursor: pointer;
+  flex-shrink: 0;
 }
 
 /* Mobile Drawer Overlay */
@@ -485,7 +490,7 @@ section {
   width: 100%;
   height: 100%;
   z-index: 1;
-  pointer-events: none !important; /* Never block touch scroll */
+  pointer-events: none !important;
 }
 
 .hero-grid {
@@ -816,6 +821,13 @@ body.light-theme .tech-badge-item {
   color: var(--text-secondary);
 }
 
+/* PROCESS METHOD GRID (Strictly responsive class) */
+.process-grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
 /* CONTACT SECTION WITH DIRECT CONTACT BUTTONS */
 .contact-container-grid {
   display: grid;
@@ -946,9 +958,15 @@ footer {
   gap: 16px;
 }
 
-/* RESPONSIVE MEDIA QUERIES FULL RESPONSIVE */
+/* ==========================================================================
+   BREAKPOINTS RESPONSIVE SPECIFIQUES
+   ========================================================================== */
+
 @media (max-width: 1100px) {
   .projects-grid-10 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .process-grid-4 {
     grid-template-columns: repeat(2, 1fr);
   }
 }
@@ -981,9 +999,22 @@ footer {
     grid-template-columns: 1fr;
   }
 
+  .process-grid-4 {
+    grid-template-columns: 1fr;
+  }
+
   .hero {
     padding-top: 100px;
     padding-bottom: 50px;
+  }
+
+  .nav-container {
+    padding: 8px 14px;
+  }
+
+  .logo {
+    font-size: 0.95rem;
+    letter-spacing: -0.01em;
   }
 
   .hero-title {
@@ -991,7 +1022,8 @@ footer {
   }
 
   .section-title {
-    font-size: 1.8rem;
+    font-size: 1.65rem;
+    line-height: 1.2;
   }
 
   .btn {
@@ -999,7 +1031,7 @@ footer {
   }
 
   .nav-cta {
-    display: none; /* Keep navbar clean on tiny screens */
+    display: none; /* Keep mobile header uncluttered */
   }
 
   .glass-card {
