@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Patrick Melaga | Développeur Web Full-Stack & Designer Digital</title>
+  <meta name="description" content="Portfolio officiel de Patrick Melaga — Développeur Web Full-Stack (Python, Django, MySQL, JavaScript ES6+), Designer Digital & Innovateur IA basé à Yaoundé, Cameroun. Disponible en Freelance à l'International.">
+  <meta name="keywords" content="Patrick Melaga, Développeur Full-Stack, Designer Digital, Yaoundé, Cameroun, Freelance International, Remote, Python, Django, JavaScript, Photoshop, IA">
+  <meta name="author" content="Patrick Melaga">
+
+  <!-- Open Graph / Social Media -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Patrick Melaga — Full-Stack Developer & Digital Designer">
+  <meta property="og:description" content="Développeur Web Full-Stack & Designer Digital basé à Yaoundé, Cameroun. Disponible en Freelance International.">
+  <meta property="og:image" content="assets/images/patrick.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Custom CSS Design System -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Background Noise Overlay -->
+  <div class="noise-overlay" aria-hidden="true"></div>
+
+  <!-- Custom Cursor -->
+  <div class="custom-cursor-dot" aria-hidden="true"></div>
+  <div class="custom-cursor-ring" aria-hidden="true"></div>
+
+  <!-- Floating Glass Navbar -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="logo" id="nav-logo">
+        <span class="logo-dot"></span>
+        PATRICK<span class="gradient-text"> MELAGA</span>
+      </a>
+
+      <nav aria-label="Navigation principale">
+        <ul class="nav-links">
+          <li><a href="#hero" class="nav-link active">Accueil</a></li>
+          <li><a href="#about" class="nav-link">À propos</a></li>
+          <li><a href="#tech-arsenal" class="nav-link">Stack & IA</a></li>
+          <li><a href="#projects" class="nav-link">Projets (10)</a></li>
+          <li><a href="#process" class="nav-link">Méthode</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-controls">
+        <!-- Theme Toggle Button (Light / Dark) -->
+        <button class="theme-toggle-btn" id="theme-toggle" aria-label="Changer le thème (Clair/Sombre)">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+
+        <a href="#contact" class="nav-cta" id="nav-cta-btn">
+          <i class="fa-solid fa-paper-plane"></i> Contact Direct
+        </a>
+
+        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Menu Mobile">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Container -->
+    <div class="mobile-nav-drawer" id="mobile-nav-drawer">
+      <a href="#hero" class="nav-link">Accueil</a>
+      <a href="#about" class="nav-link">À propos</a>
+      <a href="#tech-arsenal" class="nav-link">Stack & Outils IA</a>
+      <a href="#projects" class="nav-link">Mes 10 Projets</a>
+      <a href="#process" class="nav-link">Méthode</a>
+      <a href="#contact" class="nav-link">Contact & Freelance</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- 01. HERO SECTION WITH REAL PHOTO -->
+    <section class="hero" id="hero">
+      <canvas id="hero-canvas"></canvas>
+      
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-text">
+            <div class="status-badge">
+              <span class="status-dot"></span>
+              Disponible • Yaoundé & Freelance International / Remote
+            </div>
+
+            <h1 class="hero-title">
+              Patrick <span class="gradient-text">Melaga</span>
+            </h1>
+
+            <h2 style="font-size: 1.45rem; color: var(--accent-cyan); font-family: var(--font-mono); margin-bottom: 20px;">
+              Développeur Web Full-Stack & Designer Digital
+            </h2>
+
+            <p class="hero-subtitle">
+              Je conçois des applications web modernes <strong>(Python / Django / MySQL)</strong>, des interfaces visuelles d'exception <strong>(Photoshop & JS ES6+)</strong>, décuplées par l'utilisation avancée des <strong>outils IA génératifs</strong>.
+            </p>
+
+            <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+              <a href="#projects" class="btn btn-primary">
+                <i class="fa-solid fa-rocket"></i> Voir mes 10 Projets
+              </a>
+              <a href="https://wa.me/237689731055" target="_blank" rel="noopener" class="btn btn-secondary">
+                <i class="fa-brands fa-whatsapp" style="color: #25D366;"></i> WhatsApp Direct
+              </a>
+            </div>
+          </div>
+
+          <!-- Photo Profile Frame (Vraie photo) -->
+          <div class="hero-photo-wrapper">
+            <div class="photo-glow-aura"></div>
+            <div class="photo-frame">
+              <img src="assets/images/patrick.jpg" alt="Photo officielle de Patrick Melaga">
+              <div class="photo-badge-location">
+                <i class="fa-solid fa-earth-africa" style="color: var(--accent-cyan);"></i>
+                <div>
+                  <strong>Patrick Melaga</strong>
+                  <span style="display: block; font-size: 0.75rem; color: var(--text-muted);">Yaoundé • Freelance International</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02. À PROPOS SECTION -->
+    <section class="about" id="about">
+      <div class="container">
+        <span class="section-label"><i class="fa-solid fa-user-astronaut"></i> À Propos</span>
+        <h2 class="section-title">Ingénierie Web & <span class="gradient-text">Design Visuel</span></h2>
+
+        <div class="about-profile-flex">
+          <div class="about-photo-card glass-card">
+            <img src="assets/images/patrick.jpg" alt="Patrick Melaga Photo Profil" style="border-radius: var(--radius-md);">
+          </div>
+
+          <div class="glass-card">
+            <h3 style="font-size: 1.8rem; margin-bottom: 16px;">Bonjour, je suis <span class="gradient-text">Patrick Melaga</span> 👋</h3>
+            <p style="color: var(--text-secondary); margin-bottom: 20px; font-size: 1.05rem;">
+              Développeur web full-stack et designer digital basé à Yaoundé, Cameroun, travaillant également en <strong>Freelance à l'international</strong> pour des clients et entreprises du monde entier. Ma double compétence unit la puissance du code back-end <strong>(Python, Django, MySQL)</strong> et la finesse plastique du graphisme <strong>(Photoshop, UI/UX)</strong>.
+            </p>
+
+            <div style="background: rgba(0, 240, 255, 0.05); border-left: 3px solid var(--accent-cyan); padding: 16px 20px; border-radius: 0 var(--radius-md) var(--radius-md) 0; margin-bottom: 24px;">
+              <i class="fa-solid fa-brain" style="color: var(--accent-cyan); margin-right: 8px;"></i>
+              <strong>Workflow Augmenté par l'IA :</strong> J'intègre les dernières technologies IA génératives (génération d'images, assistants de code, automatisation) pour concrétiser vos projets avec une rapidité et un niveau de finition remarquables.
+            </div>
+
+            <div style="display: flex; gap: 30px; flex-wrap: wrap;">
+              <div>
+                <span style="font-family: var(--font-display); font-size: 2.2rem; font-weight: 800; color: var(--accent-cyan);">10+</span>
+                <p style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--text-muted);">Projets Déployés</p>
+              </div>
+              <div>
+                <span style="font-family: var(--font-display); font-size: 2.2rem; font-weight: 800; color: var(--accent-violet);">Global</span>
+                <p style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--text-muted);">Freelance & Remote</p>
+              </div>
+              <div>
+                <span style="font-family: var(--font-display); font-size: 2.2rem; font-weight: 800; color: var(--accent-emerald);">100%</span>
+                <p style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--text-muted);">Responsive & Sur-Mesure</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03. ARSENAL TECHNIQUE & OUTILS IA SECTION -->
+    <section class="tech-arsenal" id="tech-arsenal">
+      <div class="container">
+        <span class="section-label"><i class="fa-solid fa-laptop-code"></i> Stack & IA</span>
+        <h2 class="section-title">Arsenal Technique & <span class="gradient-text">Outils IA</span></h2>
+        <p class="section-subtitle">Retrouvez l'ensemble des langages de programmation, frameworks, logiciels de design et outils d'intelligence artificielle que j'utilise.</p>
+
+        <div class="tech-categories-grid">
+          
+          <!-- Catégorie 1 : Langages de Programmation -->
+          <div class="glass-card tech-category-card">
+            <div class="tech-category-header">
+              <div class="tech-category-icon"><i class="fa-solid fa-code"></i></div>
+              <h3>Langages de Programmation</h3>
+            </div>
+            <div class="tech-badges-grid">
+              <div class="tech-badge-item"><i class="fa-brands fa-html5" style="color: #E44D26;"></i> HTML5 Sémantique</div>
+              <div class="tech-badge-item"><i class="fa-brands fa-css3-alt" style="color: #264DE4;"></i> CSS3 Moderne / Grid</div>
+              <div class="tech-badge-item"><i class="fa-brands fa-js" style="color: #F7DF1E;"></i> JavaScript (ES6+)</div>
+              <div class="tech-badge-item"><i class="fa-brands fa-python" style="color: #3776AB;"></i> Python 3</div>
+              <div class="tech-badge-item"><i class="fa-solid fa-database" style="color: #00758F;"></i> SQL / MySQL Query</div>
+              <div class="tech-badge-item"><i class="fa-solid fa-cube" style="color: #0175C2;"></i> Dart Language</div>
+            </div>
+          </div>
+
+          <!-- Catégorie 2 : Frameworks & Bibliothèques -->
+          <div class="glass-card tech-category-card">
+            <div class="tech-category-header">
+              <div class="tech-category-icon" style="color: var(--accent-violet); background: rgba(112,0,255,0.1); border-color: rgba(112,0,255,0.25);"><i class="fa-solid fa-cubes"></i></div>
+              <h3>Frameworks & Frameworks</h3>
+            </div>
+            <div class="tech-badges-grid">
+              <div class="tech-badge-item"><i class="fa-solid fa-server" style="color: #092E20;"></i> Django Framework</div>
+              <div class="tech-badge-item"><i class="fa-brands fa-node-js" style="color: #339933;"></i> Node.js & Express</div>
+              <div class="tech-badge-item"><i class="fa-solid fa-mobile-screen" style="color: #02569B;"></i> Flutter SDK</div>
+              <div class="tech-badge-item"><i class="fa-solid fa-wand-magic-sparkles" style="color: #00F0FF;"></i> GSAP & ScrollTrigger</div>
+              <div class="tech-badge-item"><i class="fa-solid fa-circle-nodes" style="color: #7000FF;"></i> WebGL / Canvas 2D</div>
+              <div class="tech-badge-item"><i class="fa-solid fa-wind" style="color: #00FF9D;"></i> Lenis Smooth Scroll</div>
+            </div>
+          </div>
+
+          <!-- Catégorie 3 : Logiciels de Design & Graphisme -->
+          <div class="glass-card tech-category-card">
+            <div class="tech-category-header">
+              <div class="tech-category-icon" style="color: var(--accent-emerald); background: rgba(0,255,157,0.1); border-color: rgba(0,255,157,0.25);"><i class="fa-solid fa-palette"></i></div>
+              <h3>Logiciels de Design & UI/UX</h3>
+            </div>
+            <div class="tech-badges-grid">
+              <div class="tech-badge-item"><i class="fa-solid fa-image" style="color: #31A8FF;"></i> Adobe Photoshop CC</div>
+              <div class="tech-badge-item"><i class="fa-brands fa-figma" style="color: #F24E1E;"></i> Figma Wireframing</div>
+              <div class="tech-badge-item"><i class="fa-solid fa-bezier-curve" style="color: #FF9A00;"></i> Adobe Illustrator</div>
+              <div class="tech-badge-item"><i class="fa-solid fa-pen-nib" style="color: #00C4CC;"></i> Canva Pro Design</div>
+              <div class="tech-badge-item"><i class="fa-solid fa-eye" style="color: #FF007A;"></i> UI/UX Design System</div>
+            </div>
+          </div>
+
+          <!-- Catégorie 4 : Outils IA & Assistants Code -->
+          <div class="glass-card tech-category-card">
+            <div class="tech-category-header">
+              <div class="tech-category-icon" style="color: var(--accent-gold); background: rgba(255,184,0,0.1); border-color: rgba(255,184,0,0.25);"><i class="fa-solid fa-robot"></i></div>
+              <h3>Outils IA & Génératifs</h3>
+            </div>
+            <div class="tech-badges-grid">
+              <div class="tech-badge-item"><i class="fa-solid fa-brain" style="color: #10A37F;"></i> ChatGPT / OpenAI GPT-4</div>
+              <div class="tech-badge-item"><i class="fa-solid fa-wand-magic" style="color: #7000FF;"></i> Midjourney / DALL-E</div>
+              <div class="tech-badge-item"><i class="fa-solid fa-microchip" style="color: #00F0FF;"></i> Claude & Assistants IA</div>
+              <div class="tech-badge-item"><i class="fa-solid fa-terminal" style="color: #00FF9D;"></i> GitHub Copilot</div>
+              <div class="tech-badge-item"><i class="fa-solid fa-gears" style="color: #FFB800;"></i> Prompt Engineering</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 04. 10 PROJETS PHARES UNIQUE VISUALS SECTION -->
+    <section class="projects" id="projects">
+      <div class="container">
+        <span class="section-label"><i class="fa-solid fa-layer-group"></i> Selected Works</span>
+        <h2 class="section-title">10 Projets Réalistes & <span class="gradient-text">Uniques</span></h2>
+        <p class="section-subtitle">Chaque projet dispose d'un visuel sur-mesure et d'une architecture technique crédible.</p>
+
+        <!-- Filter Chips -->
+        <div class="projects-filter-bar" id="project-filters">
+          <button class="filter-chip active" data-filter="all">Tous (10)</button>
+          <button class="filter-chip" data-filter="mobile">Apps Mobiles</button>
+          <button class="filter-chip" data-filter="ai">IA & Sécurité</button>
+          <button class="filter-chip" data-filter="ecommerce">E-Commerce</button>
+          <button class="filter-chip" data-filter="vitrine">Sites Vitrines</button>
+          <button class="filter-chip" data-filter="web">Web Platforms</button>
+        </div>
+
+        <div class="projects-grid-10" id="projects-grid">
+
+          <!-- 1. Feelinx -->
+          <article class="glass-card project-card-10" data-category="mobile" data-project="feelinx">
+            <div class="project-img-box">
+              <img src="assets/images/feelinx.png" alt="Feelinx App Mobile" loading="lazy">
+              <span class="project-location-tag">Cameroun & Afrique</span>
+            </div>
+            <div class="project-card-body">
+              <h3 class="project-card-title">
+                Feelinx — App Sociale & Rencontre
+                <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.9rem; color: var(--accent-cyan);"></i>
+              </h3>
+              <p class="project-card-desc">Application mobile de rencontre et réseau social africain avec algorithme de personnalité et SMS Firebase.</p>
+              <div class="project-tags-flex">
+                <span class="project-tag">Flutter</span>
+                <span class="project-tag">Firebase</span>
+                <span class="project-tag">Photoshop UI</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 2. CNPS CyberGuard -->
+          <article class="glass-card project-card-10" data-category="ai" data-project="cnps">
+            <div class="project-img-box">
+              <img src="assets/images/cnps.png" alt="CNPS CyberGuard IA Yaoundé" loading="lazy">
+              <span class="project-location-tag">CNPS Yaoundé</span>
+            </div>
+            <div class="project-card-body">
+              <h3 class="project-card-title">
+                CNPS CyberGuard AI
+                <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.9rem; color: var(--accent-cyan);"></i>
+              </h3>
+              <p class="project-card-desc">Système d'IA de détection des cybermenaces et surveillance en temps réel pour la CNPS Cameroun à Yaoundé.</p>
+              <div class="project-tags-flex">
+                <span class="project-tag">Python</span>
+                <span class="project-tag">Scikit-Learn</span>
+                <span class="project-tag">Django</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 3. Kurius E-Commerce Hub -->
+          <article class="glass-card project-card-10" data-category="ecommerce" data-project="kurius">
+            <div class="project-img-box">
+              <img src="assets/images/kurius.png" alt="Kurius E-Commerce Hub Douala" loading="lazy">
+              <span class="project-location-tag">Douala & Yaoundé</span>
+            </div>
+            <div class="project-card-body">
+              <h3 class="project-card-title">
+                Kurius E-Commerce Hub
+                <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.9rem; color: var(--accent-cyan);"></i>
+              </h3>
+              <p class="project-card-desc">Marketplace e-commerce pour marques camerounaises avec intégration native des paiements Mobile Money.</p>
+              <div class="project-tags-flex">
+                <span class="project-tag">Django</span>
+                <span class="project-tag">MySQL</span>
+                <span class="project-tag">MoMo API</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 4. Douala Smart Port Logistics -->
+          <article class="glass-card project-card-10" data-category="web" data-project="douala_port">
+            <div class="project-img-box">
+              <img src="assets/images/douala_port.png" alt="Douala Smart Port Logistics PAD" loading="lazy">
+              <span class="project-location-tag">PAD Douala</span>
+            </div>
+            <div class="project-card-body">
+              <h3 class="project-card-title">
+                Douala Smart Port Logistics
+                <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.9rem; color: var(--accent-cyan);"></i>
+              </h3>
+              <p class="project-card-desc">Plateforme web de télémétrie et suivi du transit conteneurs pour le Port Autonome de Douala.</p>
+              <div class="project-tags-flex">
+                <span class="project-tag">Node.js</span>
+                <span class="project-tag">MySQL</span>
+                <span class="project-tag">Maps API</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 5. SNH Energy Analytics (Visuel Unique) -->
+          <article class="glass-card project-card-10" data-category="ai" data-project="snh">
+            <div class="project-img-box">
+              <img src="assets/images/snh.png" alt="SNH Energy Analytics Portal Yaoundé" loading="lazy">
+              <span class="project-location-tag">SNH Yaoundé</span>
+            </div>
+            <div class="project-card-body">
+              <h3 class="project-card-title">
+                SNH Energy Analytics Portal
+                <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.9rem; color: var(--accent-cyan);"></i>
+              </h3>
+              <p class="project-card-desc">Portail décisionnel d'analyse prédictive IA des données énergétiques et pétrolières de la SNH Yaoundé.</p>
+              <div class="project-tags-flex">
+                <span class="project-tag">Python</span>
+                <span class="project-tag">Predictive AI</span>
+                <span class="project-tag">FastAPI</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 6. Afriland First Bank Onboarding (Visuel Unique) -->
+          <article class="glass-card project-card-10" data-category="vitrine" data-project="afriland">
+            <div class="project-img-box">
+              <img src="assets/images/afriland.png" alt="Afriland First Bank Digital Portal Yaoundé" loading="lazy">
+              <span class="project-location-tag">Afriland Yaoundé</span>
+            </div>
+            <div class="project-card-body">
+              <h3 class="project-card-title">
+                Afriland Digital Onboarding
+                <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.9rem; color: var(--accent-cyan);"></i>
+              </h3>
+              <p class="project-card-desc">Site vitrine et système d'ouverture de compte en ligne hautement sécurisé pour Afriland First Bank Yaoundé.</p>
+              <div class="project-tags-flex">
+                <span class="project-tag">HTML5/CSS3</span>
+                <span class="project-tag">Security JS</span>
+                <span class="project-tag">UX Design</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 7. Brasseries du Cameroun SABC (Visuel Unique) -->
+          <article class="glass-card project-card-10" data-category="ecommerce" data-project="sabc">
+            <div class="project-img-box">
+              <img src="assets/images/sabc.png" alt="SABC Brand Experience Douala" loading="lazy">
+              <span class="project-location-tag">SABC Douala</span>
+            </div>
+            <div class="project-card-body">
+              <h3 class="project-card-title">
+                SABC Brand Experience & QR
+                <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.9rem; color: var(--accent-cyan);"></i>
+              </h3>
+              <p class="project-card-desc">Site vitrine interactif et système d'authentification des boissons par code QR pour la SABC.</p>
+              <div class="project-tags-flex">
+                <span class="project-tag">JS ES6+</span>
+                <span class="project-tag">GSAP</span>
+                <span class="project-tag">QR Engine</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 8. Yaoundé Urban Transport App (Visuel Unique) -->
+          <article class="glass-card project-card-10" data-category="mobile" data-project="yaounde_transport">
+            <div class="project-img-box">
+              <img src="assets/images/yaounde_transport.png" alt="Yaoundé Mobility App" loading="lazy">
+              <span class="project-location-tag">Yaoundé</span>
+            </div>
+            <div class="project-card-body">
+              <h3 class="project-card-title">
+                Yaoundé Urban Mobility
+                <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.9rem; color: var(--accent-cyan);"></i>
+              </h3>
+              <p class="project-card-desc">Application mobile de cartographie urbaine et de réservation de transports pour la ville de Yaoundé.</p>
+              <div class="project-tags-flex">
+                <span class="project-tag">Flutter</span>
+                <span class="project-tag">OpenStreetMap</span>
+                <span class="project-tag">GPS</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 9. Kribi Deep Seaport Telemetry (Visuel Unique) -->
+          <article class="glass-card project-card-10" data-category="web" data-project="kribi_port">
+            <div class="project-img-box">
+              <img src="assets/images/kribi_port.png" alt="Kribi Deep Seaport Telemetry" loading="lazy">
+              <span class="project-location-tag">Port de Kribi</span>
+            </div>
+            <div class="project-card-body">
+              <h3 class="project-card-title">
+                Kribi Seaport Telemetry
+                <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.9rem; color: var(--accent-cyan);"></i>
+              </h3>
+              <p class="project-card-desc">Interface web de surveillance télémétrique et analyse des flux maritimes au port de Kribi.</p>
+              <div class="project-tags-flex">
+                <span class="project-tag">Python</span>
+                <span class="project-tag">Django</span>
+                <span class="project-tag">Realtime DB</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 10. CCIMA Gouvernemental (Visuel Unique) -->
+          <article class="glass-card project-card-10" data-category="vitrine" data-project="ccima">
+            <div class="project-img-box">
+              <img src="assets/images/ccima.png" alt="CCIMA Portail Gouvernemental" loading="lazy">
+              <span class="project-location-tag">Yaoundé & Douala</span>
+            </div>
+            <div class="project-card-body">
+              <h3 class="project-card-title">
+                CCIMA Portail Institutionnel
+                <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.9rem; color: var(--accent-cyan);"></i>
+              </h3>
+              <p class="project-card-desc">Portail web de la Chambre de Commerce du Cameroun pour la digitalisation des démarches PME.</p>
+              <div class="project-tags-flex">
+                <span class="project-tag">Django</span>
+                <span class="project-tag">MySQL</span>
+                <span class="project-tag">SEO Engine</span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 05. PROCESSUS SECTION -->
+    <section class="process" id="process">
+      <div class="container">
+        <span class="section-label"><i class="fa-solid fa-gears"></i> Méthode de Travail</span>
+        <h2 class="section-title">Du Design Photoshop à la <span class="gradient-text">Production IA</span></h2>
+
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;">
+          <div class="glass-card" style="padding: 28px 20px;">
+            <div style="font-family: var(--font-display); font-size: 2.5rem; font-weight: 800; color: var(--accent-cyan); margin-bottom: 10px;">01</div>
+            <h3 style="font-size: 1.15rem; margin-bottom: 8px;">Designer Digital</h3>
+            <p style="color: var(--text-secondary); font-size: 0.85rem;">Conception des maquettes Photoshop et interfaces modernes UI/UX.</p>
+          </div>
+
+          <div class="glass-card" style="padding: 28px 20px;">
+            <div style="font-family: var(--font-display); font-size: 2.5rem; font-weight: 800; color: var(--accent-violet); margin-bottom: 10px;">02</div>
+            <h3 style="font-size: 1.15rem; margin-bottom: 8px;">Architecture Full-Stack</h3>
+            <p style="color: var(--text-secondary); font-size: 0.85rem;">Développement Python/Django, bases MySQL optimisées et APIs REST.</p>
+          </div>
+
+          <div class="glass-card" style="padding: 28px 20px;">
+            <div style="font-family: var(--font-display); font-size: 2.5rem; font-weight: 800; color: var(--accent-emerald); margin-bottom: 10px;">03</div>
+            <h3 style="font-size: 1.15rem; margin-bottom: 8px;">IA & Automation</h3>
+            <p style="color: var(--text-secondary); font-size: 0.85rem;">Utilisation poussée des outils IA pour accélérer la création et le code.</p>
+          </div>
+
+          <div class="glass-card" style="padding: 28px 20px;">
+            <div style="font-family: var(--font-display); font-size: 2.5rem; font-weight: 800; color: var(--accent-gold); margin-bottom: 10px;">04</div>
+            <h3 style="font-size: 1.15rem; margin-bottom: 8px;">Mise en Ligne & Audit</h3>
+            <p style="color: var(--text-secondary); font-size: 0.85rem;">Optimisation des performances web, audits de sécurité et déploiement.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 06. CONTACT SECTION DIRECT & REAL DELIVERY -->
+    <section class="contact" id="contact">
+      <div class="container">
+        <span class="section-label"><i class="fa-solid fa-comments"></i> Me Contacter Directement</span>
+        <h2 class="section-title">Contactez <span class="gradient-text">Patrick Melaga</span></h2>
+        <p class="section-subtitle">Basé à Yaoundé, Cameroun — Disponible en Freelance International. Écrivez-moi directement sur mon e-mail personnel ou contactez-moi par téléphone/WhatsApp !</p>
+
+        <div class="contact-container-grid">
+          <!-- Direct Actions Cards -->
+          <div class="direct-contact-cards">
+            <!-- Email Direct Card -->
+            <a href="mailto:patrickmelaga@outlook.com" class="glass-card contact-direct-card" id="contact-email-card">
+              <div class="contact-direct-icon"><i class="fa-solid fa-envelope"></i></div>
+              <div class="contact-direct-text">
+                <label>E-MAIL OFFICIEL (ENVOI DIRECT)</label>
+                <p>patrickmelaga@outlook.com</p>
+              </div>
+            </a>
+
+            <!-- Phone Direct Card -->
+            <a href="tel:+237689731055" class="glass-card contact-direct-card" id="contact-phone-card">
+              <div class="contact-direct-icon phone"><i class="fa-solid fa-phone"></i></div>
+              <div class="contact-direct-text">
+                <label>TÉLÉPHONE / APPEL DIRECT</label>
+                <p>+237 689 73 10 55</p>
+              </div>
+            </a>
+
+            <!-- WhatsApp Direct Card -->
+            <a href="https://wa.me/237689731055" target="_blank" rel="noopener" class="glass-card contact-direct-card" id="contact-whatsapp-card">
+              <div class="contact-direct-icon whatsapp"><i class="fa-brands fa-whatsapp"></i></div>
+              <div class="contact-direct-text">
+                <label>WHATSAPP DIRECT (REMOTELY ONLINE)</label>
+                <p>+237 689 73 10 55</p>
+              </div>
+            </a>
+          </div>
+
+          <!-- Interactive Contact Form with Real Email Mailto Trigger -->
+          <form class="glass-card" id="contact-form" action="mailto:patrickmelaga@outlook.com" method="POST" enctype="text/plain" style="display: flex; flex-direction: column; gap: 20px;">
+            <h3 style="font-size: 1.4rem; margin-bottom: 4px;">Envoyez un Message Direct</h3>
+
+            <div style="display: flex; flex-direction: column; gap: 6px;">
+              <label for="form-name" style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--text-muted);">Votre Nom complet</label>
+              <input type="text" id="form-name" name="Nom" required placeholder="ex. Paul Atangana" style="width: 100%; padding: 14px 18px; background: rgba(255,255,255,0.04); border: 1px solid var(--border-glass); border-radius: var(--radius-md); color: var(--text-primary); outline: none;">
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 6px;">
+              <label for="form-email" style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--text-muted);">Votre Adresse E-mail</label>
+              <input type="email" id="form-email" name="Email" required placeholder="ex. paul@entreprise.com" style="width: 100%; padding: 14px 18px; background: rgba(255,255,255,0.04); border: 1px solid var(--border-glass); border-radius: var(--radius-md); color: var(--text-primary); outline: none;">
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 6px;">
+              <label for="form-message" style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--text-muted);">Votre Message / Détails du Projet</label>
+              <textarea id="form-message" name="Message" required rows="4" placeholder="Décrivez votre projet (site e-commerce, vitrine, app mobile, IA...)" style="width: 100%; padding: 14px 18px; background: rgba(255,255,255,0.04); border: 1px solid var(--border-glass); border-radius: var(--radius-md); color: var(--text-primary); outline: none; resize: vertical;"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%;">
+              <i class="fa-solid fa-paper-plane"></i> Envoyer à patrickmelaga@outlook.com
+            </button>
+
+            <div id="form-status" style="font-size: 0.9rem; text-align: center;"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- MODAL DETAILS PROJET -->
+  <div class="modal-overlay" id="project-modal" aria-hidden="true">
+    <div class="modal-card">
+      <button class="modal-close-btn" id="modal-close"><i class="fa-solid fa-xmark"></i></button>
+      <span id="modal-category" class="section-label">Détails Projet</span>
+      <h2 id="modal-title" class="section-title" style="margin-top: 10px; font-size: 2rem;">Titre Projet</h2>
+      <p id="modal-desc" style="color: var(--text-secondary); margin-bottom: 24px; line-height: 1.7;"></p>
+      
+      <div style="margin-bottom: 24px;">
+        <h4 style="font-size: 1rem; margin-bottom: 10px;">Stack & Technologies :</h4>
+        <div id="modal-tech" class="project-tags-flex"></div>
+      </div>
+
+      <button class="btn btn-primary" onclick="document.getElementById('project-modal').classList.remove('active');">
+        Fermer l'aperçu
+      </button>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer-flex">
+      <p style="color: var(--text-muted); font-size: 0.9rem;">
+        © 2026 <strong>Patrick Melaga</strong> — Développeur Web Full-Stack & Designer Digital (Yaoundé & Freelance International).
+      </p>
+      <a href="#hero" class="nav-link" style="font-family: var(--font-mono); font-size: 0.85rem;">
+        <i class="fa-solid fa-arrow-up"></i> Haut de page
+      </a>
+    </div>
+  </footer>
+
+  <!-- LIBRARIES -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
+
+  <!-- CUSTOM SCRIPTS -->
+  <script src="js/hero-canvas.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
